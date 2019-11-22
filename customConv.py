@@ -42,8 +42,8 @@ def tReLU(complex_feature):
         complex_feature = [ np.real(complex_feature), np.imag(complex_feature) ]
     
     r, theta = wfc.identify(complex_feature)
-    out_r = np.exp(max([np.log(r), 0]))
-    out_theta = theta 
+    out_r = np.exp(max([np.log(r), 1]))
+    out_theta = np.exp(max([theta, 0]))
     return out_r, out_theta
 
 def vec_trelu(complex_vector):
